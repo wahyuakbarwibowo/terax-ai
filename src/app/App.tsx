@@ -1595,7 +1595,10 @@ export default function App() {
             onCreated={(path) => openFileTab(path)}
           />
 
-          <UpdaterDialog />
+          {/* Personal build: the auto-update dialog is off. Accepting an
+              official release would replace this build and take the local
+              changes with it. Settings > About still checks on demand. */}
+          {false && <UpdaterDialog />}
 
           <CloseDialogs
             tabs={tabs}
